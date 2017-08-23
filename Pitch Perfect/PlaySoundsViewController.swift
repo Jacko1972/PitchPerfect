@@ -32,7 +32,7 @@ class PlaySoundsViewController: UIViewController {
     // MARK: - Play Sound Function
     
     @IBAction func playSoundForButton(_ sender: UIButton) {
-        
+        // use button tag to playSound with appropriate modifier
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:
             playSound(rate: 0.5)
@@ -58,6 +58,7 @@ class PlaySoundsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set title in nav bar
         self.title = "Pitch Perfect"
         setupAudio()
     }

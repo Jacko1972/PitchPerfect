@@ -59,13 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				D7250C6C1F4A2F5500290273 /* AppDelegate.swift */,
-				D7250C6E1F4A2F5500290273 /* RecordSoundsViewController.swift */,
-				D7250C701F4A2F5500290273 /* Main.storyboard */,
-				D7250C731F4A2F5500290273 /* Assets.xcassets */,
-				D7250C751F4A2F5500290273 /* LaunchScreen.storyboard */,
-				D7250C781F4A2F5500290273 /* Info.plist */,
 				D7012AD81F4CABAD00ECC7A6 /* PlaySoundsViewController.swift */,
 				D7012ADA1F4CCF7A00ECC7A6 /* PlaySoundsViewController+Audio.swift */,
+				D7250C6E1F4A2F5500290273 /* RecordSoundsViewController.swift */,
+				D7250C751F4A2F5500290273 /* LaunchScreen.storyboard */,
+				D7250C701F4A2F5500290273 /* Main.storyboard */,
+				D7250C731F4A2F5500290273 /* Assets.xcassets */,
+				D7250C781F4A2F5500290273 /* Info.plist */,
 			);
 			path = "Pitch Perfect";
 			sourceTree = "<group>";

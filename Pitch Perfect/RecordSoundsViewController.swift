@@ -25,15 +25,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func recordAudio(_ sender: Any) {
         
         configureUI(recording: true)
-        
+        // create file and filepath
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
-        
+        // start session
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
-        
+        // Create audio recorder, set delegate and start recording
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
         audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
@@ -47,7 +47,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
-    
+    // MARK: - Configure UI
     func configureUI(recording flag: Bool) {
         if flag {
             recordingLabel.text = "Recording In Progress!"
@@ -61,15 +61,18 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     // MARK: - Recording Finished
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if flag {
-            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
-        } else {
-            print("Recording failed")
+        guard flag else {
+            recordingLabel.text = "Recording Failed! Try Again"
+            return
         }
+        performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+        
     }
     // MARK: - Prepare For Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Confirm the correct segue is called
         if segue.identifier == "stopRecording" {
+            // get next view controller and assign audio file url to its recordedAudioURL variable
             let platSoundsVC = segue.destination as! PlaySoundsViewController
             let recordAudioURL = sender as! URL
             platSoundsVC.recordedAudioURL = recordAudioURL
