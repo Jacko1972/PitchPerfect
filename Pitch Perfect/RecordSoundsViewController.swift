@@ -47,7 +47,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
-    // MARK: - Configure UI
+    // MARK: - Configure UI, changed after review remove if and reduce lines of code
     func configureUI(recording flag: Bool) {
             recordingLabel.text = flag ? "Recording In Progress!" : "Tap to Record"
             stopRecordingButton.isEnabled = flag

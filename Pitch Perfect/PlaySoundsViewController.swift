@@ -60,6 +60,14 @@ class PlaySoundsViewController: UIViewController {
         super.viewDidLoad()
         // set title in nav bar
         self.title = "Pitch Perfect"
+        // set aspect ratio to try and keep images square!
+        snailButton.contentMode = .scaleAspectFit
+        chipmunkButton.contentMode = .scaleAspectFit
+        rabbitButton.contentMode = .scaleAspectFit
+        vaderButton.contentMode = .scaleAspectFit
+        echoButton.contentMode = .scaleAspectFit
+        reverbButton.contentMode = .scaleAspectFit
+        
         setupAudio()
     }
 
