@@ -58,6 +58,7 @@ class PlaySoundsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Pitch Perfect"
         setupAudio()
     }
 
