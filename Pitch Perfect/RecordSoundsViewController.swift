@@ -49,20 +49,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     // MARK: - Configure UI
     func configureUI(recording flag: Bool) {
-        if flag {
-            recordingLabel.text = "Recording In Progress!"
-            stopRecordingButton.isEnabled = true
-            recordButton.isEnabled = false
-        } else {
-            recordingLabel.text = "Tap to Record"
-            stopRecordingButton.isEnabled = false
-            recordButton.isEnabled = true
-        }
+            recordingLabel.text = flag ? "Recording In Progress!" : "Tap to Record"
+            stopRecordingButton.isEnabled = flag
+            recordButton.isEnabled = !flag
     }
     // MARK: - Recording Finished
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         guard flag else {
-            recordingLabel.text = "Recording Failed! Try Again"
+            let alert = UIAlertController(title: "Error", message: "Recording Failed! Try Again!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
