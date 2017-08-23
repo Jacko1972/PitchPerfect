@@ -58,7 +58,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         guard flag else {
             let alert = UIAlertController(title: "Error", message: "Recording Failed! Try Again!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             return
         }
         performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
