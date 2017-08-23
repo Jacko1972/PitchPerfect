@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-pg-HqL">
-                                <rect key="frame" x="91" y="237" width="192" height="192"/>
+                                <rect key="frame" x="151" y="297" width="72" height="72"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egb-Xy-1ml">
-                                <rect key="frame" x="139" y="133.5" width="98" height="95"/>
+                                <rect key="frame" x="139" y="193.5" width="98" height="95"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Pitch 
@@ -68,6 +68,6 @@ Perfect</string>
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="192" height="192"/>
+        <image name="icon" width="72" height="72"/>
     </resources>
 </document>
